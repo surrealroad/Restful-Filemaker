@@ -1,6 +1,0 @@
-[submodule "slim"]
-	path = lib/slim
-	url = https://github.com/codeguy/Slim/
-[submodule "lib/slim"]
-	path = lib/slim
-	url = https://github.com/codeguy/Slim/

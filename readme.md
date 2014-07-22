@@ -38,7 +38,11 @@ Tip: be careful you don't change the permissions of the file, the fmserver user 
 
 ##Usage
 The following URLs can be used:
-* `/databases` lists all databases
+* `/` lists all databases
+* `/{database_name}/layouts` lists all layouts in {database_name}
+* `/{database_name}/scripts` lists all scripts in {database_name}
+
+additionally, each URL can be appended with either `.json`, `.jsonp`, `.html` depending upon the output format you want (defaults to JSON)
 
 ##Additional credits
 

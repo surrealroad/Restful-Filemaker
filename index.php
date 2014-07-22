@@ -15,6 +15,12 @@ include_once("inc/auth.php");
 // load FileMaker classes
 require_once("inc/filemakerSession.php");
 
+// load error handling
+require_once("inc/error.php");
+
+// load format handling
+require_once("inc/formats.php");
+
 // initialise slim
 $app = new \Slim\Slim();
 
@@ -31,7 +37,13 @@ $session = new FileMakerSession('localhost');
 
 // define routes
 include("routes/home.php");
-include("routes/databases.php");
+
+$app->group('/:database', function () use($app, $session) {
+	// scripts
+	include("routes/scripts.php");
+	// layouts
+	include("routes/layouts.php");
+});
 
 
 // run

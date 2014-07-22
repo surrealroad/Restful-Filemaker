@@ -6,12 +6,17 @@ class FileMakerSession {
 	private $password = "";
 	private $server = "";
 	public $database = "";
+	public $defaultFormat = "json";
 
 	public function __construct($server) {
 		$this->server = $server;
 	}
 
-	public function connect(){
+	public function connect($database="", $username="", $password="") {
+		$this->database = $database;
+		$this->username = $username;
+		$this->password = $password;
+
 		if(!$this->fm) {
 			$this->fm = new FileMaker($this->database, $this->server, $this->username, $this->password);
 		}

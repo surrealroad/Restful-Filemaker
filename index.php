@@ -39,10 +39,10 @@ $session = new FileMakerSession('localhost');
 include("routes/home.php");
 
 $app->group('/:database', function () use($app, $session) {
-	// scripts
-	include("routes/scripts.php");
 	// layouts
 	include("routes/layouts.php");
+	// scripts
+	include("routes/scripts.php");
 });
 
 
